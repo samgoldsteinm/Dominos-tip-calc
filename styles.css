@@ -1,0 +1,109 @@
+
+.container{max-width:920px;margin:28px auto;padding:20px}
+.panel{background:var(--dominos-blue);padding:16px;border-radius:8px;margin-bottom:16px;box-shadow:0 2px 6px rgba(20,30,60,.06);color:#fff}
+#site-banner{ }
+.site-banner{border-radius:8px;padding:12px;margin-bottom:12px;background:linear-gradient(90deg,var(--dominos-blue),var(--dominos-red));color:#fff}
+.site-banner h1{margin:0;font-family:Georgia, 'Times New Roman', serif;font-size:22px}
+#employee-form input{margin-right:8px;padding:6px;border-radius:6px;border:1px solid #e6e9ef}
+.list{list-style:none;padding:0;margin-top:12px}
+.employee-item{display:flex;gap:12px;align-items:center;padding:8px 0;border-bottom:1px dashed #f0f2f6}
+.employee-item .name{font-weight:700}
+.employee-item .remove{margin-left:auto;background:var(--red);border:none;color:#fff;padding:6px 8px;border-radius:6px}
+.bills .bill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.bills label{display:flex;flex-direction:column;font-size:13px}
+.actions{margin-top:12px}
+.actions button{padding:8px 12px;margin-right:8px;background:var(--dominos-blue);color:#fff;border:none;border-radius:6px}
+
+/* Results responsiveness */
+.results-wrapper{overflow:auto}
+.results-table{width:100%;min-width:620px;border-collapse:collapse;margin-top:8px;table-layout:fixed;background:#fff;color:#111;border-radius:6px;overflow:hidden}
+.results-table thead{background:#f6f8fb}
+.results-table th,.results-table td{border:1px solid #e9eef6;padding:8px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Employee cards for results */
+.results-cards{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.employee-card{background:#fff;color:#111;padding:12px;border-radius:10px;box-shadow:0 2px 6px rgba(16,24,40,0.06);width:100%;box-sizing:border-box}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.emp-name{font-weight:700;font-size:16px}
+.emp-hours{font-size:13px}
+.card-body{display:flex;flex-direction:column;gap:6px}
+.exact{font-size:13px;color:#333}
+.rounded{font-size:14px;color:#222}
+.rounded-amount{font-size:20px;font-weight:800;color:var(--dominos-blue);margin-left:6px}
+.bills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.bill-item{background:#f6f8fb;padding:6px 8px;border-radius:6px;color:#111}
+.bill-denom{font-weight:700}
+.uncovered{font-size:13px}
+.remaining-bills{list-style:none;padding:0;margin-top:8px}
+.remaining-bills li{background:#fff;color:#111;padding:6px;border-radius:6px;margin-bottom:6px}
+
+/* Hidden helper */
+.hidden{display:none !important}
+
+/* Responsive grid: stack on mobile, two-column on desktop */
+.grid{display:block}
+@media(min-width:900px){
+	.grid{display:grid;grid-template-columns:1fr 420px;gap:16px;align-items:start}
+	.grid > section:nth-child(1), .grid > section:nth-child(2){grid-column:1}
+	.grid > section:nth-child(3){grid-column:2}
+}
+
+/* smaller muted text */
+.muted{color:var(--muted);font-size:13px}
+
+/* Prominent total box */
+.total-box{display:flex;align-items:center;gap:12px;margin-top:12px}
+.total-box label{font-weight:700;color:#fff}
+.total-value{background:transparent;padding:6px 10px;border-radius:10px;border:2px solid rgba(255,255,255,0.18);min-width:160px;display:flex;align-items:center;justify-content:center}
+.total-value input{font-size:28px;font-weight:800;border:none;background:transparent;width:100px;text-align:right;color:#fff}
+
+/* Emphasize the Tips & Cash panel with a subtle blue background and red accent */
+.panel.tips{background:linear-gradient(180deg,var(--dominos-blue),#003d77);border-left:6px solid var(--dominos-red);color:#fff}
+
+/* Make form inputs and bill counters stand out on blue panels */
+input, select, textarea{border-radius:6px;padding:6px;border:1px solid #e6e9ef}
+input[type="number"], .bill-row input{background:#fff;color:#111}
+label{color:inherit}
+
+/* Buttons contrast */
+.actions button{background:var(--dominos-red);color:#fff}
+
+/* When results are shown, make the employee panel slightly smaller */
+.results-shown #employees-section{transform:scale(0.97);opacity:0.98}
+.results-shown #employees-section input{font-size:13px;padding:6px}
+.results-shown #employees-section .employee-item .name{font-size:14px}
+
+
+
+/* Page background set to Domino's red with white content panels */
+:root{--bg:#f5f7fb;--card:#fff;--dominos-blue:#004b8d;--dominos-red:#e31837;--muted:#666}
+*{box-sizing:border-box;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+body{margin:0;background:var(--dominos-red);color:#fff;font-size:14px}
+.container{max-width:920px;margin:28px auto;padding:20px}
+
+/* Separate action buttons so mistakes are less likely */
+.actions{margin-top:12px;display:flex;justify-content:space-between}
+.actions button{padding:10px 16px;margin:0;background:var(--dominos-blue);color:#fff;border:none;border-radius:6px}
+
+
+/* Mobile-friendly tweaks */
+@media(max-width:600px){
+	.container{padding:12px;margin:16px}
+	body{font-size:15px}
+	.total-value{min-width:140px;padding:10px}
+	.total-value input{font-size:32px;width:120px}
+	#employee-form input{width:100%;margin:6px 0}
+	.bill-row{gap:8px}
+	.actions button{width:48%;padding:12px;font-size:16px}
+	.employee-item{flex-direction:row;gap:8px}
+	.results-table th,.results-table td{font-size:13px;padding:6px}
+}
+
+/* Desktop refinements */
+@media(min-width:900px){
+	.site-banner{padding:18px}
+	.site-banner h1{font-size:24px}
+	.panel{padding:18px}
+}
+
+
