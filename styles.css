@@ -106,4 +106,10 @@ body{margin:0;background:var(--dominos-red);color:#fff;font-size:14px}
 	.panel{padding:18px}
 }
 
+/* Make the hourly tip rate in results easier to read on dark panels */
+#results > p.muted{ color: #ffffff; }
+
+/* Make the primary action buttons match the page red for contrast on blue panels */
+#calculate, #clear { background: var(--dominos-red); color: #fff; }
+
 
