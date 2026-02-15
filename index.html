@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>🍕Dominos Tip Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,7 +17,7 @@
       <div class="grid">
 
       <section id="tips-section" class="panel tips">
-        <h2>Tips & Cash</h2>
+        <h2>💵 Tips & Cash</h2>
         <div class="total-box">
           <label>Total tips</label>
           <div class="total-value">$
@@ -24,8 +26,8 @@
         </div>
 
         <div class="bills">
-          <h3>Available Bills</h3>
-          <div class="bill-row">
+          <h3>Cash on Hand</h3>
+          <div class="bill-grid">
             <label>$100 <input class="bill-count" data-value="100" type="number" min="0" /></label>
             <label>$50 <input class="bill-count" data-value="50" type="number" min="0" /></label>
             <label>$20 <input class="bill-count" data-value="20" type="number" min="0" /></label>
@@ -39,6 +41,12 @@
           <button id="calculate">Calculate</button>
           <button id="clear">Clear</button>
         </div>
+        <div class="utility-actions">
+          <button id="save-data">💾 Save</button>
+          <button id="view-history">📋 History</button>
+          <button id="export-pdf">📄 PDF</button>
+          <button id="export-csv">📊 CSV</button>
+        </div>
       </section>
 
       <section id="results-section" class="panel hidden">
@@ -49,7 +57,7 @@
       </section>
 
       <section id="employees-section" class="panel">
-        <h2>Employees</h2>
+        <h2>👥 Employees</h2>
         <div id="employee-form">
           <input id="emp-name" placeholder="Name" />
           <input id="emp-hours" placeholder="Hours" type="number" step="0.01" min="0" />
@@ -57,6 +65,22 @@
         </div>
         <ul id="employees" class="list"></ul>
       </section>
+      </div>
+
+      <div id="history-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>📋 History</h2>
+            <button id="close-history" class="close-btn">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div id="chart-container" class="chart-container hidden">
+              <h3>Tips Over Time</h3>
+              <canvas id="tipsChart"></canvas>
+            </div>
+            <div id="history-list" class="history-list"></div>
+          </div>
+        </div>
       </div>
     </div>
 
